@@ -57,7 +57,7 @@ myconf:
     HostType: "Kubernetes Pod"
     Version: "go-zero $project v1.0"
 EOF
-
+sed -i 's/port: 80/port: 8888/g' $project/helm/$project/values.yaml
 echo "[modify] $project/helm/$project/values.yaml"
 
 cat << EOF > $project/etc/myconf.yaml
